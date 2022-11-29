@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "emblazingexpansion",
+  "version": "${0.1}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Emblazing Expansion",
+  "description": "A small-scale Minecraft mod that aims to enhance the Nether dimension.",
   "authors": [
-    "Me!"
+    "DonnaDeer"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "tumblr": "https://donnadeer.tumblr.com/",
+    "sources": " "
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/emblazingexpansion/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.antlerstudio.emblazingexpansion.EmblazingExpansionMain"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "emblazingexpansion.mixins.json"
   ],
 
   "depends": {
