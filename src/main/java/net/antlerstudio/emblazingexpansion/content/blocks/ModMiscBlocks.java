@@ -23,6 +23,9 @@ public class ModMiscBlocks {
                             .sounds(BlockSoundGroup.GRASS)
                             .noCollision()
                             .breakInstantly()
+                            .nonOpaque()
+                            .ticksRandomly()
+                            .sounds(BlockSoundGroup.NETHER_SPROUTS)
             ));
 
     private static Block registerBlock(String name, Block block) {

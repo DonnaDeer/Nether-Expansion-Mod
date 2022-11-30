@@ -1,9 +1,9 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "DonnaDeer",
 	"texture_size": [32, 32],
 	"textures": {
-		"2": "warped_berry_plant",
-		"particle": "warped_berry_plant"
+		"2": "emblazingexpansion:block/warped_berry_plant",
+		"particle": "emblazingexpansion:block/warped_berry_plant"
 	},
 	"elements": [
 		{

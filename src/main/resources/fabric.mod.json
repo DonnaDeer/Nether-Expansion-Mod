@@ -20,8 +20,12 @@
   "entrypoints": {
     "main": [
       "net.antlerstudio.emblazingexpansion.EmblazingExpansionMain"
+    ],
+    "client": [
+      "net.antlerstudio.emblazingexpansion.EmblazingExpansionClient"
     ]
   },
+
   "mixins": [
     "emblazingexpansion.mixins.json"
   ],

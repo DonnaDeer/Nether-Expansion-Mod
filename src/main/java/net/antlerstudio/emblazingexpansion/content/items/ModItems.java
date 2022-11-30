@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 public class ModItems {
 
     public static final Item WARPED_SEED = registerItem("warped_seed",
-            new AliasedBlockItem(ModMiscBlocks.WILD_WARPED_BERRY, new FabricItemSettings().group(ItemGroup.FOOD)));
+            new AliasedBlockItem(ModMiscBlocks.WILD_WARPED_BERRY, new FabricItemSettings().group(ItemGroup.MISC)));
 
 
     private static Item registerItem(String name, Item item) {
