@@ -1,6 +1,7 @@
 package net.antlerstudio.emblazingexpansion;
 
 import net.antlerstudio.emblazingexpansion.content.blocks.ModBlocks;
+import net.antlerstudio.emblazingexpansion.content.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +15,7 @@ public class EmblazingExpansionMain implements ModInitializer {
 	public void onInitialize() {
 
 
-		//ModItems.registerModItems();
-
+		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 
 

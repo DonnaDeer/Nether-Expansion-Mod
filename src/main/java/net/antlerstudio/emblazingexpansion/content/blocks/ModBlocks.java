@@ -15,7 +15,6 @@ import net.minecraft.util.registry.Registry;
 public class ModBlocks {
 
 
-
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, new Identifier(EmblazingExpansionMain.MOD_ID, name), block);

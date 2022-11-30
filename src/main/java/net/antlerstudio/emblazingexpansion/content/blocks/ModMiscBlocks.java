@@ -14,6 +14,7 @@ import net.minecraft.util.registry.Registry;
 
 public class ModMiscBlocks {
 
+
     public static final Block WILD_WARPED_BERRY = registerBlock("wild_warped_berry",
             new WarpedBerryCropBlock(
                     FabricBlockSettings
