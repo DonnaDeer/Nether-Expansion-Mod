@@ -29,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.event.GameEvent.Emitter;
 
-public class WarpedBerryCropBlock extends PlantBlock implements Fertilizable {
+public class WarpedBerryCropBlock extends NetherPlantBlock implements Fertilizable {
     private static final float field_31260 = 0.003F;
     public static final int MAX_AGE = 3;
     public static final IntProperty AGE;
@@ -79,12 +79,12 @@ public class WarpedBerryCropBlock extends PlantBlock implements Fertilizable {
         boolean bl = i == 3;
         if (!bl && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
             return ActionResult.PASS;
-        } else if (i > 1) {
-            int j = 1 + world.random.nextInt(2);
+        } else if (i > 3) {
+            int j = 3 + world.random.nextInt(3);
             dropStack(world, pos, new ItemStack(ModItems.WARPED_SEED, j + (bl ? 1 : 0)));
             world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
-            BlockState blockState = (BlockState)state.with(AGE, 1);
-            world.setBlockState(pos, blockState, 2);
+            BlockState blockState = (BlockState)state.with(AGE, 0);
+            world.setBlockState(pos, blockState, 3);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, Emitter.of(player, blockState));
             return ActionResult.success(world.isClient);
         } else {
