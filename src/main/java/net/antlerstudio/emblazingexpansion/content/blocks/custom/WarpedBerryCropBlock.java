@@ -34,6 +34,7 @@ public class WarpedBerryCropBlock extends PlantBlock implements Fertilizable {
     public static final int MAX_AGE = 3;
     public static final IntProperty AGE;
     private static final VoxelShape SMALL_SHAPE;
+    private static final VoxelShape MEDIUM_SHAPE;
     private static final VoxelShape LARGE_SHAPE;
 
     public WarpedBerryCropBlock(Settings settings) {
@@ -48,8 +49,15 @@ public class WarpedBerryCropBlock extends PlantBlock implements Fertilizable {
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         if ((Integer)state.get(AGE) == 0) {
             return SMALL_SHAPE;
+
+        } else if ((Integer)state.get(AGE) == 1) {
+            return SMALL_SHAPE;
+
+        } else if ((Integer)state.get(AGE) == 2) {
+            return MEDIUM_SHAPE;
+
         } else {
-            return (Integer)state.get(AGE) < 3 ? LARGE_SHAPE : super.getOutlineShape(state, world, pos, context);
+            return (Integer)state.get(AGE) == 3 ? LARGE_SHAPE : super.getOutlineShape(state, world, pos, context);
         }
     }
 
@@ -103,7 +111,8 @@ public class WarpedBerryCropBlock extends PlantBlock implements Fertilizable {
 
     static {
         AGE = Properties.AGE_3;
-        SMALL_SHAPE = Block.createCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
-        LARGE_SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
+        SMALL_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 10.0D, 4.0D, 10.0D);
+        MEDIUM_SHAPE = Block.createCuboidShape(4.0D, 0.0D, 4.0D, 11.0D, 5.0D, 11.0D);
+        LARGE_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D);
     }
 }
