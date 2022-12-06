@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "emblazingexpansion:warped_berry"
+    }
+  ],
+  "result": {
+    "item": "emblazingexpansion:warped_seed"
+  }
+}

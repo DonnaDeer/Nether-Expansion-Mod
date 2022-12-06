@@ -2,6 +2,7 @@
 
 package net.antlerstudio.emblazingexpansion.content.blocks.custom;
 
+import net.antlerstudio.emblazingexpansion.content.tags.ModBlockTags;
 import net.minecraft.block.AbstractBlock.Settings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,7 +21,7 @@ class NetherPlantBlock extends Block {
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.WARPED_NYLIUM);
+        return floor.isIn(ModBlockTags.WARPED_BERRY_PLANTABLES);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {

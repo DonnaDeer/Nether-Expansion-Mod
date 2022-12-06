@@ -76,15 +76,15 @@ public class WarpedBerryCropBlock extends NetherPlantBlock implements Fertilizab
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         int i = (Integer)state.get(AGE);
-        boolean bl = i == 3;
+        boolean bl = i == 2;
         if (!bl && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
             return ActionResult.PASS;
-        } else if (i > 3) {
-            int j = 3 + world.random.nextInt(3);
-            dropStack(world, pos, new ItemStack(ModItems.WARPED_SEED, j + (bl ? 1 : 0)));
+        } else if (i > 2) {
+            int j = 1 + world.random.nextInt(1);
+            dropStack(world, pos, new ItemStack(ModItems.WARPED_BERRY, j + (bl ? 1 : 0)));
             world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             BlockState blockState = (BlockState)state.with(AGE, 0);
-            world.setBlockState(pos, blockState, 3);
+            world.setBlockState(pos, blockState, 0);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, Emitter.of(player, blockState));
             return ActionResult.success(world.isClient);
         } else {
@@ -111,8 +111,11 @@ public class WarpedBerryCropBlock extends NetherPlantBlock implements Fertilizab
 
     static {
         AGE = Properties.AGE_3;
-        SMALL_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 10.0D, 4.0D, 10.0D);
-        MEDIUM_SHAPE = Block.createCuboidShape(4.0D, 0.0D, 4.0D, 11.0D, 5.0D, 11.0D);
-        LARGE_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D);
+        SMALL_SHAPE =
+                Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 4.0D, 11.0D);
+        MEDIUM_SHAPE =
+                Block.createCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 5.0D, 12.0D);
+        LARGE_SHAPE =
+                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D);
     }
 }
